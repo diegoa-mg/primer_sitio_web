@@ -8,6 +8,11 @@
 
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -27,30 +32,53 @@ body {
 }
 
 .contenedor {
-    width: 120rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 .nav-bg {
     background-color: var(--secundario);
 }
 
-.navegacion-principal {
+.navegacion-principal { /** Telefono **/
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+}
+
+@media (min-width: 768px) { /** tableta y laptop **/
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .navegacion-principal a {
+    display: block;
+    align-items: center;
     color: var(--blanco);
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 2rem;
     font-weight: 700;
-    padding: 1rem;
+    padding: 1.2rem;
 }
 
 .navegacion-principal a:hover {
     background-color: var(--primario);
+    color: var(--oscuro);
 }
 
-p {
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40rem;
+    padding: 2rem;
+    position: relative;
+}
 
+.contenido-hero {
+    position: absolute;
+    background-color: red;
+    width: 2rem;
+    height: 2rem;
 }
